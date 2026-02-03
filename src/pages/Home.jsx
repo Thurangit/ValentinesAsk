@@ -16,9 +16,9 @@ function Home() {
         <h1>💕 St Valentin</h1>
         <p className="home-subtitle">Choisis une petite app</p>
         <nav className="app-links">
-          <Link to="/tj-melancolio" className="app-link card-valentine">
+          <Link to="/melancolio" className="app-link card-valentine">
             <span className="app-link-icon">💌</span>
-            <span className="app-link-title">TJ Mélancolio</span>
+            <span className="app-link-title">Mélancolio</span>
             <span className="app-link-desc">Une question pour toi...</span>
           </Link>
         </nav>

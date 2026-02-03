@@ -26,8 +26,20 @@
 
 .tj-question {
   color: #a63d5c;
-  margin-bottom: 2.5rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  animation: tj-question-appear 0.6s ease-out forwards;
+}
+
+@keyframes tj-question-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tj-buttons {
@@ -37,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2.5rem;
   flex-wrap: nowrap;
 }
 
@@ -78,7 +90,8 @@
   pointer-events: auto;
   user-select: none;
   cursor: default;
-  transition: left 0.35s ease-out, top 0.35s ease-out;
+  transition: left 0.45s ease-out, top 0.45s ease-out;
+  touch-action: none;
 }
 
 .tj-btn-no:hover {
@@ -95,6 +108,16 @@
   z-index: 1;
   text-align: center;
   animation: fade-in 0.5s ease;
+}
+
+.tj-result-kiss {
+  display: block;
+  width: min(200px, 50vw);
+  height: auto;
+  margin: 0 auto 1rem;
+  border: none;
+  border-radius: 0;
+  animation: fade-in 0.6s ease 0.2s both;
 }
 
 @keyframes fade-in {
@@ -136,6 +159,134 @@
   font-size: 1.1rem;
 }
 
+/* ========== Animation festive (Oui) ========== */
+.tj-result-page {
+  overflow: hidden;
+}
+
+/* Ballons cœurs qui s'envolent */
+.festive-balloons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.balloon-heart {
+  position: absolute;
+  bottom: -1.5rem;
+  font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+  opacity: 0;
+  color: #c41e5a;
+  filter: drop-shadow(0 2px 6px rgba(196, 30, 90, 0.25));
+  animation: balloon-float-up ease-in-out forwards;
+}
+
+.balloon-heart:nth-child(odd) {
+  color: #ff69b4;
+}
+
+.balloon-heart:nth-child(3n) {
+  color: #8b2942;
+}
+
+@keyframes balloon-float-up {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  20% {
+    transform: translateY(-15vh) translateX(10px) scale(0.9);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-8px) scale(1);
+  }
+  80% {
+    transform: translateY(-85vh) translateX(5px) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-115vh) translateX(0) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Petits feux d'artifice en bas */
+.festive-fireworks {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.firework-burst {
+  position: absolute;
+  bottom: 12%;
+  width: 4px;
+  height: 4px;
+  transform: translate(-50%, 0);
+  animation: firework-burst 2.5s ease-out infinite;
+}
+
+.firework-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb6c1 0%, #c41e5a 40%, transparent 70%);
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.5);
+  animation: particle-spread 2.2s ease-out var(--delay) infinite;
+  opacity: 0;
+}
+
+.firework-burst:nth-child(odd) .firework-particle {
+  background: radial-gradient(circle, #ffe4ec 0%, #ff69b4 50%, transparent 70%);
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
+}
+
+.firework-burst:nth-child(3) .firework-particle {
+  background: radial-gradient(circle, #ffd700 0%, #ff8c00 50%, transparent 70%);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes firework-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.3);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes particle-spread {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+  8% {
+    opacity: 0.9;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0.15);
+  }
+}
+
 /* Copyright en bas de page */
 .tj-footer {
   position: absolute;
@@ -147,4 +298,93 @@
   color: #a63d5c;
   opacity: 0.85;
   z-index: 1;
+}
+
+/* ========== Responsive & tactile ========== */
+@media (max-width: 480px) {
+  .tj-melancolio {
+    padding: 1.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .tj-title {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .tj-question {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .tj-buttons {
+    min-height: 100px;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tj-btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+    min-width: 100px;
+  }
+
+  .tj-btn-yes:hover {
+    transform: none;
+  }
+
+  .tj-btn-yes:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 360px) {
+  .tj-title {
+    font-size: 1.5rem;
+  }
+
+  .tj-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    min-width: 88px;
+  }
+}
+
+/* Page résultat (après Oui) - responsive */
+@media (max-width: 480px) {
+  .tj-result-kiss {
+    width: min(180px, 55vw);
+    margin-bottom: 0.75rem;
+    border: none;
+    border-radius: 0;
+  }
+
+  .tj-result-hearts {
+    font-size: 2.25rem;
+  }
+
+  .tj-result h2 {
+    font-size: 1.6rem;
+  }
+
+  .tj-result-text {
+    font-size: 1rem;
+  }
+
+  .balloon-heart {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+  }
+
+  .festive-fireworks {
+    height: 30%;
+  }
+}
+
+/* Zone de sécurité pour le viewport mobile (barre d'adresse) */
+@supports (min-height: 100dvh) {
+  .tj-melancolio {
+    min-height: 100dvh;
+  }
 }
