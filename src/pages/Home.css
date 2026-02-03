@@ -1,0 +1,70 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #8b2942;
+}
+
+.home-subtitle {
+  color: #a63d5c;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.app-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.app-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  min-width: 200px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #8b2942;
+  background: linear-gradient(145deg, rgba(255, 182, 193, 0.5), rgba(255, 192, 203, 0.3));
+  border: 1px solid rgba(196, 30, 90, 0.25);
+  box-shadow: 0 4px 16px rgba(139, 41, 66, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(196, 30, 90, 0.2);
+  border-color: rgba(196, 30, 90, 0.4);
+}
+
+.app-link-icon {
+  font-size: 2.5rem;
+}
+
+.app-link-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.app-link-desc {
+  font-size: 0.9rem;
+  color: #a63d5c;
+}

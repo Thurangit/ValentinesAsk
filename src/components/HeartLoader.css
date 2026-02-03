@@ -1,0 +1,94 @@
+.heart-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 9999;
+  color: #c41e5a;
+}
+
+.heart-loader-inner {
+  position: relative;
+  width: 120px;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  animation: heart-block-beat 0.75s ease-in-out 1.5s 3 forwards;
+}
+
+.heart-loader-svg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cœur qui se dessine (trait qui suit le contour) */
+.heart-loader-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: heart-draw 1.4s ease-out forwards;
+}
+
+@keyframes heart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Ondulation optionnelle après le dessin */
+.heart-loader-pulse {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 30, 90, 0.08) 0%, transparent 65%);
+  animation: heart-pulse-ring 0.9s ease-out 1.5s 3 forwards;
+  pointer-events: none;
+}
+
+@keyframes heart-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes heart-block-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  56%, 100% {
+    transform: scale(1);
+  }
+}
+
+/* Credit en bas */
+.heart-loader-credit {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a63d5c;
+  opacity: 0.9;
+  margin: 0;
+}

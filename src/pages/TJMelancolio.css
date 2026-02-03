@@ -1,0 +1,150 @@
+.tj-melancolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-bottom: 3.5rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.tj-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tj-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #8b2942;
+}
+
+.tj-question {
+  color: #a63d5c;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+}
+
+.tj-buttons {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.tj-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  z-index: 2;
+}
+
+.tj-btn-yes {
+  flex-shrink: 0;
+  background: linear-gradient(145deg, #2d8a4e, #1e6b3a);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(45, 138, 78, 0.4);
+}
+
+.tj-btn-yes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(45, 138, 78, 0.5);
+}
+
+.tj-btn-yes:active {
+  transform: scale(0.98);
+}
+
+.tj-btn-no {
+  position: relative;
+  flex-shrink: 0;
+  background: linear-gradient(145deg, #b91c3c, #7f1d1d);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(185, 28, 60, 0.4);
+  pointer-events: auto;
+  user-select: none;
+  cursor: default;
+  transition: left 0.35s ease-out, top 0.35s ease-out;
+}
+
+.tj-btn-no:hover {
+  /* Le bouton bouge via JS, on évite juste un scale */
+}
+
+.tj-btn-no:active {
+  pointer-events: none;
+}
+
+/* Écran de remerciement après "Oui" */
+.tj-result {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  animation: fade-in 0.5s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tj-result-hearts {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse-hearts 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-hearts {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+.tj-result h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  color: #8b2942;
+}
+
+.tj-result-text {
+  color: #a63d5c;
+  font-size: 1.1rem;
+}
+
+/* Copyright en bas de page */
+.tj-footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a63d5c;
+  opacity: 0.85;
+  z-index: 1;
+}

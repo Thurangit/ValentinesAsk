@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Thème St Valentin commun - fond blanc */
+.valentine-bg {
+  min-height: 100vh;
+  position: relative;
+  background: #fff;
+  color: #8b2942;
+}
+
+.hearts-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart-float {
+  position: absolute;
+  font-size: clamp(1rem, 3vw, 2rem);
+  opacity: 0.25;
+  color: #c41e5a;
+  animation: float-heart 8s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+.heart-float:nth-child(odd) {
+  animation-duration: 10s;
+  animation-delay: -2s;
+}
+
+@keyframes float-heart {
+  0%, 100% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(1);
+    opacity: 0.12;
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(10px, -15px) scale(1.1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(-8px, -8px) scale(0.95);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(5px, -20px) scale(1.05);
+    opacity: 0.18;
+  }
+}
+
+/* Positions des cœurs définies en inline dans les composants */
