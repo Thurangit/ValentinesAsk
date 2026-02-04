@@ -11,6 +11,22 @@
   overflow: hidden;
 }
 
+/* Ouverture en douceur après le loader */
+.tj-page-reveal {
+  animation: tj-page-reveal 0.9s ease-out forwards;
+}
+
+@keyframes tj-page-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .tj-content {
   position: relative;
   z-index: 1;
@@ -102,6 +118,17 @@
   pointer-events: none;
 }
 
+/* Garde la place du bouton Non pour que Oui ne bouge pas */
+.tj-btn-spacer {
+  display: inline-block;
+  min-width: 6rem;
+  width: 6rem;
+  height: 3rem;
+  flex-shrink: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 /* Écran de remerciement après "Oui" */
 .tj-result {
   position: relative;
@@ -154,9 +181,31 @@
   color: #8b2942;
 }
 
+.tj-result-message {
+  color: #8b2942;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 28rem;
+  margin: 0 auto 0.75rem;
+}
+
 .tj-result-text {
   color: #a63d5c;
   font-size: 1.1rem;
+}
+
+/* "Essaie encore" en bas tant qu'elle essaie Non */
+.tj-try-again {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #a63d5c;
+  margin: 0;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 /* ========== Animation festive (Oui) ========== */

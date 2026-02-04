@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../contexts/LanguageContext'
+import { getTranslations } from '../locales'
+import { LangSwitcher } from '../components/LanguagePicker'
 import './Home.css'
 
 function Home() {
+  const { lang } = useLanguage()
+  const t = getTranslations('home', lang || 'fr')
+
   return (
     <div className="home valentine-bg">
       <div className="hearts-bg" aria-hidden="true">
@@ -13,15 +19,18 @@ function Home() {
         ))}
       </div>
       <main className="home-content">
-        <h1>💕 St Valentin</h1>
-        <p className="home-subtitle">Choisis une petite app</p>
+        <h1>💕 {t.appTitle}</h1>
+        <p className="home-subtitle">{t.chooseApp}</p>
         <nav className="app-links">
           <Link to="/melancolio" className="app-link card-valentine">
             <span className="app-link-icon">💌</span>
-            <span className="app-link-title">Mélancolio</span>
-            <span className="app-link-desc">Une question pour toi...</span>
+            <span className="app-link-title">{t.melancolio}</span>
+            <span className="app-link-desc">{t.melancolioDesc}</span>
           </Link>
         </nav>
+        <p className="home-lang">
+          <LangSwitcher />
+        </p>
       </main>
     </div>
   )

@@ -26,6 +26,11 @@
   font-size: 1.1rem;
 }
 
+.home-lang {
+  margin-top: 1.5rem;
+  min-height: 1.5rem;
+}
+
 .app-links {
   display: flex;
   flex-wrap: wrap;

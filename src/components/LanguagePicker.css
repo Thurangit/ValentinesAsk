@@ -1,0 +1,77 @@
+.language-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.language-picker {
+  text-align: center;
+  padding: 2rem;
+}
+
+.language-picker-label {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: #8b2942;
+  margin-bottom: 1.5rem;
+}
+
+.language-picker-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.language-picker-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid #c41e5a;
+  background: #fff;
+  color: #8b2942;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.language-picker-btn:hover {
+  background: #ffe4ec;
+  color: #8b2942;
+}
+
+/* Petit switcher FR | EN */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.lang-switcher-btn {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  border: none;
+  background: none;
+  color: #a63d5c;
+  cursor: pointer;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.lang-switcher-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.lang-switcher-btn.active {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.lang-switcher-sep {
+  opacity: 0.6;
+  color: #a63d5c;
+}

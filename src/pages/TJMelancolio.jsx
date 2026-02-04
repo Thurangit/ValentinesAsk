@@ -1,12 +1,19 @@
 import { useRef, useCallback, useState, useEffect } from 'react'
 import HeartLoader from '../components/HeartLoader'
+import { useLanguage } from '../contexts/LanguageContext'
+import { getTranslations } from '../locales'
+import { LangSwitcher } from '../components/LanguagePicker'
 import kissGif from '../components/image/kiss1.gif'
 import './TJMelancolio.css'
 
 function TJMelancolio() {
+  const { lang } = useLanguage()
+  const t = getTranslations('melancolio', lang || 'fr')
+
   const [saidYes, setSaidYes] = useState(false)
   const [loading, setLoading] = useState(true)
   const [hasTriedNo, setHasTriedNo] = useState(false)
+  const [resultMessage, setResultMessage] = useState(null)
   const noBtnRef = useRef(null)
 
   useEffect(() => {
@@ -53,6 +60,11 @@ function TJMelancolio() {
   }, [])
 
   const handleYes = () => {
+    const messages = t.messages || []
+    const msg = messages.length
+      ? messages[Math.floor(Math.random() * messages.length)]
+      : null
+    setResultMessage(msg)
     setSaidYes(true)
   }
 
@@ -62,7 +74,7 @@ function TJMelancolio() {
 
   if (saidYes) {
     return (
-      <div className="tj-melancolio valentine-bg tj-result-page">
+      <div className="tj-melancolio valentine-bg tj-result-page tj-page-reveal">
         <div className="hearts-bg" aria-hidden="true">
           {[
             [5, 10], [25, 70], [60, 20], [80, 50], [15, 40], [70, 80],
@@ -126,16 +138,19 @@ function TJMelancolio() {
         <div className="tj-result">
           <img src={kissGif} alt="" className="tj-result-kiss" />
           <p className="tj-result-hearts">💕 ❤️ 💕</p>
-          <h2>Merci !</h2>
-          <p className="tj-result-text">À très bientôt…</p>
+          <h2>{t.resultTitle}</h2>
+          {resultMessage && <p className="tj-result-message">{resultMessage}</p>}
+          <p className="tj-result-text">{t.resultSubtitle}</p>
         </div>
-        <footer className="tj-footer">by Thuran Junior</footer>
+        <footer className="tj-footer">
+          by Thuran Junior <LangSwitcher />
+        </footer>
       </div>
     )
   }
 
   return (
-    <div className="tj-melancolio valentine-bg">
+    <div className="tj-melancolio valentine-bg tj-page-reveal">
       <div className="hearts-bg" aria-hidden="true">
         {[
           [5, 10], [25, 70], [60, 20], [80, 50], [15, 40], [70, 80],
@@ -146,8 +161,8 @@ function TJMelancolio() {
       </div>
 
       <div className="tj-content">
-        <h1 className="tj-title">Veux-tu être ma Valentine ?</h1>
-        {hasTriedNo && <p className="tj-question">Dis oui… 💌</p>}
+        <h1 className="tj-title">{t.title}</h1>
+        {hasTriedNo && <p className="tj-question">{t.sayYes}</p>}
 
         <div className="tj-buttons">
           <button
@@ -155,8 +170,9 @@ function TJMelancolio() {
             className="tj-btn tj-btn-yes"
             onClick={handleYes}
           >
-            Oui
+            {t.yes}
           </button>
+          {hasTriedNo && <span className="tj-btn-spacer" aria-hidden="true" />}
           <button
             ref={noBtnRef}
             type="button"
@@ -171,11 +187,14 @@ function TJMelancolio() {
             tabIndex={-1}
             aria-hidden="true"
           >
-            Non
+            {t.no}
           </button>
         </div>
       </div>
-      <footer className="tj-footer">by Thuran Junior</footer>
+      {hasTriedNo && <p className="tj-try-again">{t.tryAgain}</p>}
+      <footer className="tj-footer">
+        by Thuran Junior <LangSwitcher />
+      </footer>
     </div>
   )
 }
