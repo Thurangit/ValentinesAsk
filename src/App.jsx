@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import TJMelancolio from './pages/TJMelancolio'
 import NotreHistoire from './pages/NotreHistoire'
@@ -8,7 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/notre-histoire" replace />} />
+        <Route path="/accueil" element={<Home />} />
         <Route path="/melancolio" element={<TJMelancolio />} />
         <Route path="/notre-histoire" element={<NotreHistoire />} />
       </Routes>
