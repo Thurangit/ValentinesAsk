@@ -116,14 +116,14 @@
 
 /* Étape lettre */
 .nh-letter-step {
-  max-width: 28rem;
+  max-width: 32rem;
 }
 
 .nh-letter {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   border: 1px solid rgba(196, 30, 90, 0.2);
   border-radius: 16px;
-  padding: 1.75rem;
+  padding: 2rem;
   box-shadow: 0 8px 32px rgba(139, 41, 66, 0.15);
   animation: nh-letter-appear 0.5s ease-out;
 }
@@ -141,7 +141,7 @@
 
 .nh-letter-text {
   font-size: 1.05rem;
-  line-height: 1.65;
+  line-height: 1.75;
   color: #8b2942;
   margin: 0;
   text-align: left;
