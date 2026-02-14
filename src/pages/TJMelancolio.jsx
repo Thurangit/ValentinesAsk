@@ -143,7 +143,7 @@ function TJMelancolio() {
           <p className="tj-result-text">{t.resultSubtitle}</p>
         </div>
         <footer className="tj-footer">
-          by Thuran Junior <LangSwitcher />
+          <LangSwitcher />
         </footer>
       </div>
     )
@@ -193,7 +193,7 @@ function TJMelancolio() {
       </div>
       {hasTriedNo && <p className="tj-try-again">{t.tryAgain}</p>}
       <footer className="tj-footer">
-        by Thuran Junior <LangSwitcher />
+        <LangSwitcher />
       </footer>
     </div>
   )

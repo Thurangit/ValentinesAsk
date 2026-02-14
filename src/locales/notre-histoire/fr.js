@@ -1,11 +1,18 @@
 export default {
-    title: 'Notre histoire',
-    askName: 'Comment tu t’appelles ?',
-    namePlaceholder: 'Ton prénom',
-    submit: 'Continuer',
-    envelopeHint: 'Clique sur l’enveloppe pour ouvrir la lettre 💌',
-    letters: [
-        `{{name}},
+        title: 'Notre histoire',
+        askName: 'Comment tu t’appelles ?',
+        namePlaceholder: 'Entre ton prénom',
+        nameNotAllowed: "Ce nom n'est pas reconnu.",
+        submit: 'Continuer',
+        stepLabel: 'Étape',
+        forName: 'Pour {{name}}',
+        scenario1Text: '{{name}}, quelqu’un a pensé à toi aujourd’hui. Et a voulu te laisser un mot doux…',
+        scenario1Btn: 'Continuer',
+        scenario2Text: 'Au détour du chemin, une enveloppe t’attend. Elle ne demande qu’à être ouverte.',
+        scenario2Btn: 'Voir la lettre',
+        envelopeHint: 'Clique sur l’enveloppe pour découvrir le message 💌',
+        letters: [
+                `{{name}},
 
 Tu es celle qui fait battre mon cœur un peu plus fort chaque matin. Ce n’est pas qu’une phrase — c’est la vérité de chaque jour.
 
@@ -16,7 +23,7 @@ Et ma vie en est transfigurée. »
 
 Je ne savais pas, avant toi, à quel point une personne pouvait illuminer les jours gris. Merci d’être cette lumière. À toi, pour toujours.`,
 
-        `Ma chère {{name}},
+                `Ma chère {{name}},
 
 Je t’écris cette lettre comme on écrit l’histoire qu’on a envie de vivre. Avec toi, chaque chapitre est plus beau que le précédent.
 
@@ -27,7 +34,7 @@ Et pour les mots doux que tu m’apportes. »
 
 Tu es ma muse, ma complice et mon plus beau rêve éveillé. Merci d’exister. Je t’aime.`,
 
-        `{{name}},
+                `{{name}},
 
 Si je devais résumer ce que tu représentes pour moi, je ne trouverais pas les mots. Alors je laisse un petit poème parler pour moi :
 
@@ -38,7 +45,7 @@ Tu es mon cœur, tu es mon bonheur. »
 
 Notre histoire ne fait que commencer, et je veux en écrire chaque ligne à tes côtés. À très vite.`,
 
-        `À toi, {{name}},
+                `À toi, {{name}},
 
 Il y a des gens qui changent une vie. Tu as changé la mienne. Pas par des gestes extraordinaires — par ta présence, ton rire, ta façon de voir le monde.
 
@@ -49,7 +56,7 @@ Tu es mon amour, tu es mon fidèle. »
 
 Merci d’être là. Merci d’être toi. Je t’aime.`,
 
-        `{{name}}, mon amour,
+                `{{name}}, mon amour,
 
 Cette lettre est une promesse : celle de t’aimer un peu plus chaque jour, de te choisir encore et encore.
 
@@ -60,7 +67,7 @@ Et je veux construire avec toi toute ma vie. »
 
 Tu es la personne avec qui je veux écrire la suite. À nous deux.`,
 
-        `Ma belle {{name}},
+                `Ma belle {{name}},
 
 Tu es le genre de personne qui rend les autres meilleurs. Tu donnes sans compter, tu aimes sans condition.
 
@@ -71,7 +78,7 @@ Tu es ma joie, tu es mon espoir. »
 
 Merci pour chaque instant partagé. Notre histoire est celle que je voulais lire depuis toujours. Je t’aime.`,
 
-        `{{name}},
+                `{{name}},
 
 On dit que l’amour est un voyage. Avec toi, chaque étape est un cadeau.
 
@@ -82,7 +89,7 @@ Tu es la voix qui me fait croire. »
 
 Merci d’être l’héroïne de cette aventure. Elle ne fait que commencer. À toi, pour toujours.`,
 
-        `À {{name}}, avec tout mon cœur,
+                `À {{name}}, avec tout mon cœur,
 
 Je n’ai pas besoin de grands mots pour te dire ce que tu représentes. Un petit vers suffit parfois :
 
@@ -92,5 +99,5 @@ Avec toi le monde a des couleurs,
 Tu es mon amour, tu es mon bonheur. »
 
 Merci d’être à mes côtés. Je t’aime.`,
-    ],
+        ],
 }

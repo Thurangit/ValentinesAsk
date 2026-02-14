@@ -22,7 +22,6 @@ function HeartLoader() {
         </svg>
         <div className="heart-loader-pulse" aria-hidden="true" />
       </div>
-      <p className="heart-loader-credit">by Thuran Junior</p>
     </div>
   )
 }

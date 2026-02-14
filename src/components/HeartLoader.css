@@ -80,15 +80,3 @@
   }
 }
 
-/* Credit en bas */
-.heart-loader-credit {
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #a63d5c;
-  opacity: 0.9;
-  margin: 0;
-}

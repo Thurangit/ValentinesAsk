@@ -1,11 +1,18 @@
 export default {
-    title: 'Our story',
-    askName: "What's your name?",
-    namePlaceholder: 'Your first name',
-    submit: 'Continue',
-    envelopeHint: 'Click the envelope to open the letter 💌',
-    letters: [
-        `{{name}},
+        title: 'Our story',
+        askName: "What's your name?",
+        namePlaceholder: 'Enter your first name',
+        nameNotAllowed: 'This name is not recognized.',
+        submit: 'Continue',
+        stepLabel: 'Step',
+        forName: 'For {{name}}',
+        scenario1Text: 'Someone thought of you today. And wanted to leave you a few kind words…',
+        scenario1Btn: 'Continue',
+        scenario2Text: 'Along the path, an envelope is waiting for you. It only asks to be opened.',
+        scenario2Btn: 'See the letter',
+        envelopeHint: 'Click the envelope to discover the message 💌',
+        letters: [
+                `{{name}},
 
 You're the one who makes my heart beat a little faster every morning. This isn't just a line — it's the truth of every day.
 
@@ -16,7 +23,7 @@ And my life is transformed."
 
 I didn't know, before you, how much one person could brighten the grey days. Thank you for being that light. Yours, forever.`,
 
-        `My dear {{name}},
+                `My dear {{name}},
 
 I'm writing you this letter the way you write the story you want to live. With you, every chapter is more beautiful than the last.
 
@@ -27,7 +34,7 @@ And for the gentle words you bring me."
 
 You're my muse, my partner in crime, and my most beautiful dream come true. Thank you for existing. I love you.`,
 
-        `{{name}},
+                `{{name}},
 
 If I had to sum up what you mean to me, I wouldn't find the words. So I'll let a little poem speak for me:
 
@@ -38,7 +45,7 @@ You are my heart, you are my happiness."
 
 Our story has only just begun, and I want to write every line of it by your side. See you soon.`,
 
-        `To you, {{name}},
+                `To you, {{name}},
 
 Some people change a life. You changed mine. Not with grand gestures — with your presence, your laugh, your way of seeing the world.
 
@@ -49,7 +56,7 @@ You are my love, you are my faithful one."
 
 Thank you for being here. Thank you for being you. I love you.`,
 
-        `{{name}}, my love,
+                `{{name}}, my love,
 
 This letter is a promise: to love you a little more each day, to choose you again and again.
 
@@ -60,7 +67,7 @@ And I want to build my whole life with you."
 
 You're the person I want to write the rest with. The two of us.`,
 
-        `My beautiful {{name}},
+                `My beautiful {{name}},
 
 You're the kind of person who makes others better. You give without counting, you love without conditions.
 
@@ -71,7 +78,7 @@ You are my joy, you are my hope."
 
 Thank you for every moment we've shared. Our story is the one I've always wanted to read. I love you.`,
 
-        `{{name}},
+                `{{name}},
 
 They say love is a journey. With you, every step is a gift.
 
@@ -82,7 +89,7 @@ You are the voice that makes me believe."
 
 Thank you for being the heroine of this adventure. It's only just beginning. Yours, forever.`,
 
-        `To {{name}}, with all my heart,
+                `To {{name}}, with all my heart,
 
 I don't need big words to tell you what you mean. Sometimes a little verse is enough:
 
@@ -92,5 +99,5 @@ With you the world has colours,
 You are my love, you are my happiness."
 
 Thank you for being by my side. I love you.`,
-    ],
+        ],
 }
