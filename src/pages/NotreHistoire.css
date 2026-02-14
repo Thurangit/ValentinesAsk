@@ -1,0 +1,162 @@
+.notre-histoire {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nh-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.nh-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #8b2942;
+  margin-bottom: 1.5rem;
+}
+
+.nh-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.nh-label {
+  font-size: 1.1rem;
+  color: #a63d5c;
+}
+
+.nh-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid rgba(196, 30, 90, 0.3);
+  border-radius: 12px;
+  background: #fff;
+  color: #8b2942;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.nh-input::placeholder {
+  color: #c4a0a8;
+}
+
+.nh-input:focus {
+  border-color: #c41e5a;
+}
+
+.nh-btn {
+  padding: 0.85rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #c41e5a, #8b2942);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nh-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(196, 30, 90, 0.35);
+}
+
+/* Étape enveloppe */
+.nh-envelope-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nh-hint {
+  font-size: 1rem;
+  color: #a63d5c;
+  margin: 0;
+}
+
+.nh-envelope {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.nh-envelope:hover {
+  transform: scale(1.1);
+}
+
+.nh-envelope:active {
+  transform: scale(0.95);
+}
+
+.nh-envelope-icon {
+  font-size: 7rem;
+  filter: drop-shadow(0 4px 12px rgba(139, 41, 66, 0.25));
+}
+
+/* Étape lettre */
+.nh-letter-step {
+  max-width: 28rem;
+}
+
+.nh-letter {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(196, 30, 90, 0.2);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 8px 32px rgba(139, 41, 66, 0.15);
+  animation: nh-letter-appear 0.5s ease-out;
+}
+
+@keyframes nh-letter-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.nh-letter-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #8b2942;
+  margin: 0;
+  text-align: left;
+  white-space: pre-line;
+}
+
+/* Footer réutilisé */
+.notre-histoire .tj-footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a63d5c;
+  opacity: 0.85;
+  z-index: 1;
+}

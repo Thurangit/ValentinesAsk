@@ -27,6 +27,11 @@ function Home() {
             <span className="app-link-title">{t.melancolio}</span>
             <span className="app-link-desc">{t.melancolioDesc}</span>
           </Link>
+          <Link to="/notre-histoire" className="app-link card-valentine">
+            <span className="app-link-icon">📜</span>
+            <span className="app-link-title">{t.notreHistoire}</span>
+            <span className="app-link-desc">{t.notreHistoireDesc}</span>
+          </Link>
         </nav>
         <p className="home-lang">
           <LangSwitcher />
